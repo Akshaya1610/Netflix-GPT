@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import openai from "../utils/openai";
 import { API_OPTIONS } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import {addGptMovies}  from "../utils/gptSlice"
+import {addGptMovies}  from "../utils/gptSlice";
+import Loader from "./loader/Loader";
 const GptSearchBar = () => {
+  const [loading, setLoading] = useState(false);
   const searchText = useRef(null);
   const dispatch = useDispatch(null);
   const searchMovieTMDB = async (movie) => {
@@ -19,6 +21,7 @@ const GptSearchBar = () => {
   };
 
   const getMovieSuggestion = async () => {
+    setLoading(true);
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
@@ -34,12 +37,16 @@ const GptSearchBar = () => {
     const gptMovies = gptResults?.choices[0]?.message?.content.split(",");
     const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
     const tmdbResults = await Promise.all(promiseArray);
-    console.log(tmdbResults);
+    setLoading(false);
     dispatch(addGptMovies({gptMovieNames :gptMovies, tmdbMovieResults :tmdbResults }))
   };
 
   return (
-    <div className="pt-[10%] flex justify-center search-bar-pt">
+    <div>
+    {loading ? (
+      <Loader />
+    ) : (
+      <div className="pt-[10%] flex justify-center search-bar-pt">
       <form
         className="w-full md:w-1/2 bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
@@ -58,6 +65,9 @@ const GptSearchBar = () => {
         </button>
       </form>
     </div>
+    )}
+  </div>
+    
   );
 };
 export default GptSearchBar;
