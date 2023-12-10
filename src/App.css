@@ -1,0 +1,197 @@
+.title-class {
+    font-size: 36px;
+    font-weight: bold;
+}
+.description{
+    font-size: 16px;
+    width: 500px;
+}
+.movie-card :hover{
+   cursor: pointer;
+}
+
+.info-icon{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+.play-btn{
+    height: 50px;
+    width:150px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+}
+.info-btn{
+    height: 50px;
+    width:150px;
+    border-radius: 10px;
+    background-color: #7b7b7bbf;
+    color: #fff;
+    margin-left: 20px;
+}
+.f18{
+    font-size: 18px;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 250px) {
+    /* body{
+        background-color: #333 !important;
+    } */
+    .mobile-gpt-bg{
+        height: 100vh;
+        object-fit: cover;
+    }
+    .mobile-view-sec{
+        margin-top: 0px;
+        position: static;
+        z-index: 0;
+    }
+    .title-class {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .description{
+        font-size: 14px;
+        width: 220px;
+    }
+    .mobile-bg-img{
+        width:0%;
+    }
+    .mobile-btn-font{
+        font-size: 8px;
+        margin-left: 0px;
+        margin-bottom: 8px;
+    }
+    .mobile-res-header{
+       padding-left: 1rem;
+       padding-right: 0px;
+    }
+    .mobile-res-logo{
+        width: 3rem;
+        height: 2.5rem;
+    }
+    .user-logo-mobile{
+        width:1rem;
+        height: 1rem;
+        margin-top: 2px;
+    }
+    .res-name{
+        padding: 0px;
+        font-size: 12px;
+    }
+
+}
+@media only screen and (min-width: 251px) and (max-width: 600px) {
+    /* body{
+        background-color: #333 !important;
+    } */
+    .mobile-gpt-bg{
+        height: 100vh;
+        object-fit: cover;
+    }
+    .search-bar-pt{
+        padding-top:30%;
+    }
+    .mobile-view-sec{
+        margin-top: 0px;
+        position: static;
+        z-index: 0;
+    }
+    .play-btn{
+        height: 30px;
+        width:80px;
+    }
+    .info-btn{
+        height: 30px;
+        width:120px;
+        margin-left: 8px;
+    }
+    .btn-text-margin{
+        margin-left: 15px;
+    }
+    
+    .title-class {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .description{
+        font-size: 14px;
+        width: 250px;
+        display: none;
+    }
+    .mobile-bg-img{
+        width:0%;
+    }
+    .mobile-res-header{
+       padding-left: 1rem;
+       padding-right: 0px;
+    }
+    .mobile-btn-font{
+        font-size: 14px;
+    }
+    .user-logo-mobile{
+        width:1.5rem;
+        height: 1.5rem;
+        margin-top: 8px;
+    }
+    .mobile-res-form{
+        width: 90%;
+        padding: 2.5rem;
+    }
+    .mobile-res-logo{
+        width: 5rem;
+        height: 40px;
+        margin-top: 8px;
+    }
+    .mobile-header-padding{
+        padding: 0.2rem;
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+    .mobile-view-sec{
+        margin-top: 0px;
+        position: static;
+        z-index: 0;
+    }
+    .btn-text-margin{
+        margin-left: 15px;
+    }
+    .mobile-gpt-bg{
+        height: 100vh;
+        object-fit: cover;
+    }
+    .search-bar-pt{
+        padding-top:20%;
+    }
+    .play-btn{
+        height: 35px;
+        width:85px;
+    }
+    .info-btn{
+        height: 35px;
+        width:120px;
+        margin-left: 8px;
+    }
+    /* body{
+        background-color: #333 !important;
+    } */
+    .mobile-bg-img{
+        max-width: 200%;
+    }
+    .mobile-res-form {
+        margin-top: 10rem;
+    }
+   
+    .title-class {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .description{
+        font-size: 14px;
+        width: 250px;
+    }
+}
