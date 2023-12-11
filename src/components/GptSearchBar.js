@@ -6,6 +6,7 @@ import {addGptMovies}  from "../utils/gptSlice";
 import Loader from "./loader/Loader";
 const GptSearchBar = () => {
   const [loading, setLoading] = useState(false);
+  const [errormessage, setErrorMessage] = useState(null);
   const searchText = useRef(null);
   const dispatch = useDispatch(null);
   const searchMovieTMDB = async (movie) => {
@@ -21,6 +22,12 @@ const GptSearchBar = () => {
   };
 
   const getMovieSuggestion = async () => {
+    if (searchText.current?.value.length  === 0 ) {
+      setErrorMessage("please fill mandatory field");
+      return
+    } else{
+      setErrorMessage(false)
+    }
     setLoading(true);
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
@@ -57,12 +64,14 @@ const GptSearchBar = () => {
           placeholder="What would you like to watch?"
           ref={searchText}
         />
+        
         <button
           className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white rounded-lg"
           onClick={getMovieSuggestion}
         >
           Search
         </button>
+        <p className='p-2 m-2 col-span-9 font-bold text-red-600 '>{errormessage}</p>
       </form>
     </div>
     )}

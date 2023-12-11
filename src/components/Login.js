@@ -21,19 +21,16 @@ const Login = () => {
  const validateFormData = () => {
     
     if (email.current?.value.length  === 0 ) {
-      setErrorMessage("please fill mandatory field");
+      setErrorMessage("please fill mandatory fields");
       return
     } else if(password.current?.value.length  === 0){
-      setErrorMessage("please fill mandatory field");
+      setErrorMessage("please fill mandatory fields");
       return
     }
     if(!isSignInForm  && name.current?.value.length === 0){
         console.log("required");
-        setErrorMessage("please fill mandatory field");
+        setErrorMessage("please fill mandatory fields");
         return
-    }
-    if(!isSignInForm  && name.current.value){
-      setErrorMessage(validateUserName(name.current.value)) ; return
     }
     const message = validateData(email.current.value, password.current.value)
     setErrorMessage(message);
